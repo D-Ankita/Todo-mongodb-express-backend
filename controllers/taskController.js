@@ -81,10 +81,39 @@ const deleteTask = async (req, resp, next) => {
   }
 };
 
+const updateTask = async (req, res, next) => {
+  const { body: updateObject } = req;
+  const {
+    params: { id },
+  } = req;
+  let task = req.task;
+  console.log("typeof task", typeof task);
+  console.log("updateObject", updateObject.description);
+  try {
+    let updatedTask = await Task.findOneAndUpdate(
+      { id: id },
+      { $set: { ...updateObject } },
+      { new: true }
+    );
+    // let updatedTask = {...task,description:updateObject.description}
+    // await task.save();
+    // console.log("task after updating", updatedTask);
+    return sendResponse(req, res, next, {
+      statusCode: 200,
+      message: `task updated`,
+      payload: updatedTask,
+    });
+  } catch (err) {
+    console.log("error", err);
+    return next(new AppError(500, "internal error operation"));
+  }
+};
+
 module.exports = {
   addTask,
   getAllTask,
   fetchTask,
   fetchTaskfromQuery,
   deleteTask,
+  updateTask
 };
