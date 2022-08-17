@@ -1,7 +1,7 @@
 const uniqid = require("uniqid");
 const Task = require("../models/Tasks");
 const AppError = require("../utils/AppError");
-// const sendResponse = require("../middlewares/sendResponse");
+const sendResponse = require("../middlewares/sendResponse");
 
 const addTask = async (req, resp) => {
   const {
@@ -33,8 +33,39 @@ const getAllTask = async (req, res, next) => {
   }
 };
 
+const fetchTask = async (req, res, next) => {
+  const { task } = req;
+  return sendResponse(req, res, next, {
+    statusCode: 200,
+    message: "task fetched",
+    payload: task,
+  });
+};
+
+const fetchTaskfromQuery = async (req, res, next) => {
+  // const { params: id } = req;
+  const { query: queryObject } = req;
+
+  console.log("query in req", {...queryObject});
+  try {
+    let task = await Task.find({...queryObject});
+    console.log("task----",task,typeof task);
+    if (!task.data) {
+      return next(new AppError(404, `Task not found`));
+    }
+    return sendResponse(req, res, next, {
+      statusCode: 200,
+      message: "task fetched",
+      payload: task,
+    });
+  } catch (err) {
+    return next(new AppError(400, " Bad request"));
+  }
+};
 
 module.exports = {
   addTask,
-  getAllTask
+  getAllTask,
+  fetchTask,
+  fetchTaskfromQuery
 };
