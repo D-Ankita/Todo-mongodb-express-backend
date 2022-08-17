@@ -1,0 +1,21 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "To Do BackEnd",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "author": "Ankita",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "migrate-mongo": "^9.0.0",
+    "moment": "^2.29.4",
+    "mongoose": "^6.5.2",
+    "mongoose-paginate-v2": "^1.7.0",
+    "uniqid": "^5.4.0"
+  }
+}
