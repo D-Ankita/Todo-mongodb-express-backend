@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "server.txt": true,
+    "app.txt": true,
+    "middlewares\\sendErrorResponse.txt": true,
+    "middlewares\\sendResponse.txt": true,
+    "middlewares\\validators.txt": true,
+    "controllers\\taskController.txt": true,
+    "controllers\\frontEndController.js": true,
+    "models\\Tasks.txt": true,
+    "routes\\taskRoutes.txt": true,
+    "routes\\todoFrontEndRouter.js": true
+  }
+}

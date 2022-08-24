@@ -1,8 +1,16 @@
 const mongoose = require("mongoose");
+import { Schema, model, connect } from 'mongoose';
 const uniqid = require("uniqid");
 const mongoosePaginate = require("mongoose-paginate-v2")
 //defines the structure of the document in my collection
-const taskSchema = mongoose.Schema(
+
+interface ITask{
+  id:string;
+  description:string;
+  isComplete:boolean;
+}
+
+const taskSchema =new Schema(
   {
     id: { type: String, default: uniqid() },
     description: {
@@ -22,8 +30,9 @@ const taskSchema = mongoose.Schema(
 
 taskSchema.plugin(mongoosePaginate)
 
-const Task = mongoose.model("Tasks", taskSchema);
-module.exports = Task;
+const Task = model("Tasks", taskSchema);
+// module.exports = Task;
+export{Task}
 
 //what is rhe name of collection
 //how to access collection
