@@ -29,8 +29,8 @@ npm run dev`
         This route will help user to add new a Todo. 
         This endpoint requires a body which contains a valid body. Incase the structure of the body doesnt match it will give an Error Status Code
     #### Sample Body
-    `{description:sample content ; type:string;
-    isComplete: it can be either true or false;}`
+    ```{description:sample content ; type:string;
+    isComplete: it can be either true or false;}```
 3. ### fetch a unique task:
      `GET  /todos/id` OR 
         `GET  /todos?id="someId"`
@@ -48,7 +48,8 @@ npm run dev`
 
 
 ## Directory Structure
-`.
+```
+.
 ├── app.js
 ├── package.json
 ├── package-lock.json
@@ -60,7 +61,8 @@ npm run dev`
 ├── routes
 │   └── taskRouter.js
 └── utils
-    └── sendResponse.js`
+    └── sendResponse.js
+```
 
 
 
