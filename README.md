@@ -49,19 +49,19 @@ npm run dev`
 
 ## Directory Structure
 ```
-.
-├── app.js
-├── package.json
-├── package-lock.json
-├── README.md
-├── controllers
-│   └── taskController.js
-├── models
-│   └── taskModel.js
-├── routes
-│   └── taskRouter.js
-└── utils
-    └── sendResponse.js
+. 
+├── app.js 
+├── package.json 
+├── package-lock.json 
+├── README.md 
+├── controllers 
+│   └── taskController.js 
+├── models 
+│   └── taskModel.js 
+├── routes 
+│   └── taskRouter.js 
+└── utils 
+    └── sendResponse.js 
 ```
 
 
