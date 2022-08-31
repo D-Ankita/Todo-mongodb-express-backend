@@ -1,6 +1,6 @@
 # To Do List Backend
 
-### Problem Statement:
+## Problem Statement:
 Create an express api for creating a to do application. The application provides end points for the following CRUD operation
 1. Create a task
 2. Read all tasks
@@ -10,40 +10,62 @@ Create an express api for creating a to do application. The application provides
 The end points will be tested using Postman and data should be sent back as json objects. Use appropriate HTTP Methods for implementing the api endpoints.
 
 -------------------------------
-### Installation
+## Installation
 Prerequisites:must have Node.js installed on the machine
 
 Clone the repository and run the following commands in the terminal
-`npm install
-npm run dev`
+```
+npm install
+npm run dev
+```
 
-### Routes 
+## Routes 
 1. ### Get all the tasks :
-     `GET  /todos`
+     ```
+     GET  /todos
+     ```
         <!-- This route will fetch all the tasks using paging concept.  -->
         <!--all cases handled by paging
         wont require separate query params here -->
 
 2. ### Add a task:
-    `POST  /todos`
+    ```
+    POST  /todos
+    ```
         This route will help user to add new a Todo. 
         This endpoint requires a body which contains a valid body. Incase the structure of the body doesnt match it will give an Error Status Code
     #### Sample Body
-    ```{description:sample content ; type:string;
-    isComplete: it can be either true or false;}```
+
+    ```
+    {
+        description:sample content ; 
+        isComplete: it can be either true or false;
+    }
+    ```
+
 3. ### fetch a unique task:
-     `GET  /todos/id` OR 
-        `GET  /todos?id="someId"`
-        This route will fetch the task with corresponding id 
+     ```
+     GET  /todos/id
+     ```
+     OR   
+    ```
+    GET  /todos?id="someId" 
+    ```
+
+    This route will fetch the task with corresponding id 
 
 4. ### update a unique task:
-    `PATCH  /todos/id`
+    ```
+    PATCH  /todos/id
+    ```
         his route will help user to EDIT his Todo. 
         This endpoint requires a body which contains a valid body  to be updated and and id in the url of the todo task to be updated. 
         only the description and isComplete status can be updated
 
 5. ### delete a task:
-    `DELETE  /todos/id`
+    ```
+    DELETE  /todos/id
+    ```
     This endpoint will delete an existing task. It requires a valid task ID for deletion.
 
 
