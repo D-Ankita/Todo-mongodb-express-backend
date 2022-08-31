@@ -24,16 +24,17 @@ npm run dev
      ```
      GET  /todos
      ```
-        <!-- This route will fetch all the tasks using paging concept.  -->
-        <!--all cases handled by paging
-        wont require separate query params here -->
+
+    This route will fetch all the tasks using paging concept. 
+       
 
 2. ### Add a task:
     ```
     POST  /todos
     ```
-        This route will help user to add new a Todo. 
-        This endpoint requires a body which contains a valid body. Incase the structure of the body doesnt match it will give an Error Status Code
+
+    This route will help user to add new a Todo. 
+    This endpoint requires a body which contains a valid body. Incase the structure of the body doesnt match it will give an Error Status Code
     #### Sample Body
 
     ```
@@ -58,9 +59,9 @@ npm run dev
     ```
     PATCH  /todos/id
     ```
-        his route will help user to EDIT his Todo. 
-        This endpoint requires a body which contains a valid body  to be updated and and id in the url of the todo task to be updated. 
-        only the description and isComplete status can be updated
+    This route will help user to EDIT his Todo. 
+    This endpoint requires a body which contains a valid body  to be updated and and id in the url of the todo task to be updated. 
+    only the description and isComplete status can be updated
 
 5. ### delete a task:
     ```
