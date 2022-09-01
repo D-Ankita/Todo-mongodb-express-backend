@@ -1,7 +1,7 @@
 # To Do List Backend
 
 ## Problem Statement:
-Create an express api for creating a to do application. The application provides end points for the following CRUD operation
+Create an express api for creating a to do application. The application provides end points for the following CRUD operation in TYPESCRIPT
 1. Create a task
 2. Read all tasks
 3. Read a single task based on a taskId sent in a route parameter
